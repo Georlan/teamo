@@ -1,4 +1,13 @@
 let highestZ = 1;
+let musicaTocando = false;
+const musica = document.getElementById("musica.mp3");
+
+function tocarMusica() {
+  if (!musicaTocando) {
+    musica.play();
+    musicaTocando = true;
+  }
+}
 class Paper {
   holdingPaper = false;
   mouseTouchX = 0;
