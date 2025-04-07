@@ -13,8 +13,6 @@ class Paper {
   currentPaperX = 0;
   currentPaperY = 0;
   rotating = false;
-
-  
   init(paper) {
     document.addEventListener('mousemove', (e) => {
       if(!this.rotating) {
