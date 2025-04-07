@@ -52,6 +52,7 @@ class Paper {
       }
     })
     paper.addEventListener('mousedown', (e) => {
+      tocarMusica(); // toca a música na primeira interação
       if(this.holdingPaper) return;
       this.holdingPaper = true;
       paper.style.zIndex = highestZ;
