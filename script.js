@@ -1,4 +1,16 @@
 let highestZ = 1;
+let musicStarted = false;
+
+function playMusic() {
+  if (!musicStarted) {
+    const audio = document.getElementById('musicPlayer');
+    audio.play().catch(error => {
+      console.log('Reprodução automática bloqueada:', error);
+    });
+    musicStarted = true;
+  }
+}
+
 class Paper {
   holdingPaper = false;
   mouseTouchX = 0;
@@ -13,6 +25,7 @@ class Paper {
   currentPaperX = 0;
   currentPaperY = 0;
   rotating = false;
+
   init(paper) {
     document.addEventListener('mousemove', (e) => {
       if(!this.rotating) {
@@ -21,6 +34,7 @@ class Paper {
         this.velX = this.mouseX - this.prevMouseX;
         this.velY = this.mouseY - this.prevMouseY;
       }
+      
       const dirX = e.clientX - this.mouseTouchX;
       const dirY = e.clientY - this.mouseTouchY;
       const dirLength = Math.sqrt(dirX*dirX+dirY*dirY);
@@ -29,9 +43,11 @@ class Paper {
       const angle = Math.atan2(dirNormalizedY, dirNormalizedX);
       let degrees = 180 * angle / Math.PI;
       degrees = (360 + Math.round(degrees)) % 360;
+      
       if(this.rotating) {
         this.rotation = degrees;
       }
+      
       if(this.holdingPaper) {
         if(!this.rotating) {
           this.currentPaperX += this.velX;
@@ -41,12 +57,16 @@ class Paper {
         this.prevMouseY = this.mouseY;
         paper.style.transform = `translateX(${this.currentPaperX}px) translateY(${this.currentPaperY}px) rotateZ(${this.rotation}deg)`;
       }
-    })
+    });
+
     paper.addEventListener('mousedown', (e) => {
       if(this.holdingPaper) return;
       this.holdingPaper = true;
       paper.style.zIndex = highestZ;
       highestZ += 1;
+      
+      playMusic();
+      
       if(e.button === 0) {
         this.mouseTouchX = this.mouseX;
         this.mouseTouchY = this.mouseY;
@@ -57,12 +77,14 @@ class Paper {
         this.rotating = true;
       }
     });
+
     window.addEventListener('mouseup', () => {
       this.holdingPaper = false;
       this.rotating = false;
     });
   }
 }
+
 const papers = Array.from(document.querySelectorAll('.paper'));
 papers.forEach(paper => {
   const p = new Paper();
