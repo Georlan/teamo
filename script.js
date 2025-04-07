@@ -1,5 +1,5 @@
 let highestZ = 1;
-let musicaTocando = false; // flag para tocar apenas uma vez
+let musica.mp3Tocando = false; // flag para tocar apenas uma vez
 
 class Paper {
   holdingPaper = false;
@@ -57,11 +57,11 @@ class Paper {
       highestZ += 1;
 
       // TOCAR A MÚSICA APENAS UMA VEZ AQUI
-      if (!musicaTocando) {
-        const musica = document.getElementById('musica');
-        if (musica) {
-          musica.play().catch(err => console.log("Erro ao tocar música:", err));
-          musicaTocando = true;
+      if (!musica.mp3Tocando) {
+        const musica.mp3 = document.getElementById('musica.mp3');
+        if (musica.mp3) {
+          musica.mp3.play().catch(err => console.log("Erro ao tocar música:", err));
+          musica.mp3Tocando = true;
         }
       }
 
