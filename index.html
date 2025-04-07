@@ -4,21 +4,43 @@
   <meta charset="UTF-8">
   <title>saro-rosy ❤️</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilos adicionais para mais folhas */
+    .paper {
+      padding: 20px;
+      max-width: 300px;
+      min-height: 150px;
+      transform: rotate(-2deg);
+      margin: 10px;
+      position: absolute;
+      background:#aff6ff !important;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.2em;
+    }
+
+    .paper:nth-child(even) {
+      transform: rotate(2deg);
+      background: #ffe4e1;
+    }
+
+    .paper:nth-child(3n) {
+      transform: rotate(1deg);
+      background: #f8f8ff;
+    }
+  </style>
 </head>
 <body>
-
-<!-- Botão para tocar música -->
-<button id="playButton" onclick="tocarMusica()">▶️ Tocar música</button>
 
 <!-- Developed by Saravanan -->
 <div class="paper heart"></div>
 
+
 <div class="paper">
-  <p>EU TE AMO!</p>
+  <p>EU TE AMO!/p>
 </div>
   
+<!-- Folhas com texto em ordem crescente -->
 <div class="paper">
   <p>eu nunca amei tanto olhar para alguém, pense no quanto eu te amo e o quanto eu ac ito em você e seus sonhos.</p>
   <img src="https://iili.io/HSzXyXa.jpg" />
@@ -67,7 +89,7 @@
 </div>
 
 <div class="paper">
-  <p>se tudo o que eu quero e desejo com toda a minha alma</p>
+  <p > se tudo o que eu quero e desejo com toda a minha alma</p>
 </div>
   
 <div class="paper">
@@ -75,13 +97,13 @@
 </div>
 
 <div class="paper">
-  <p>Arraste os papéis!</p>
+  <p >Arraste os papéis!</p>
 </div>
-
-<!-- Áudio -->
-<audio id="musica" src="musica.mp3" preload="auto" loop></audio>
 
 <script src="script.js"></script>
 
+  <audio id="musica.mp3" src="musica.mp3" preload="auto"></audio>
+
 </body>
 </html>
+
