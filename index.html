@@ -6,42 +6,27 @@
   <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap'>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Estilos atualizados com novas cores */
+    /* Estilos adicionais para mais folhas */
     .paper {
       padding: 20px;
       max-width: 300px;
       min-height: 150px;
+      transform: rotate(-2deg);
       margin: 10px;
       position: absolute;
+      background:#aff6ff;
       font-family: 'Dancing Script', cursive;
       font-size: 1.2em;
-      background: #67c7ff; /* Cor base */
-      transform: rotate(-2deg);
-      z-index: 1;
-    }
-
-    .paper:nth-child(odd) {
-      background: #67c7ff; /* Azul claro */
-      transform: rotate(-2deg);
     }
 
     .paper:nth-child(even) {
-      background: #9967ff; /* Roxo claro */
       transform: rotate(2deg);
+      background: #ffe4e1;
     }
 
-    .paper.heart {
-      background: #ff6b6b !important; /* Mantendo cor do coração */
-      z-index: 2;
-    }
-
-    .paper.image {
-      z-index: 3;
-    }
-
-    .paper.red {
-      background: #ff7675 !important; /* Mantendo destaque para textos importantes */
-      transform: rotate(-1deg);
+    .paper:nth-child(3n) {
+      transform: rotate(1deg);
+      background: #f8f8ff;
     }
   </style>
 </head>
@@ -50,11 +35,12 @@
 <!-- Developed by Saravanan -->
 <div class="paper heart"></div>
 
-<!-- Folhas em ordem crescente com alternância de cores -->
-<div class="paper red">
-  <p>EU TE AMO!</p>
-</div>
 
+<div class="paper red">
+  <p>EU TE AMO!/p>
+</div>
+  
+<!-- Folhas com texto em ordem crescente -->
 <div class="paper image">
   <p>eu nunca amei tanto olhar para alguém, pense no quanto eu te amo e o quanto eu acredito em você e seus sonhos.</p>
   <img src="https://iili.io/HSzXyXa.jpg" />
@@ -80,7 +66,7 @@
 <div class="paper red">
   <p>Você desperta em mim a mais paradoxal e violenta vontade de escrever poesias</p>
 </div>
-
+  
 <div class="paper red">
   <p>tu és a junção de todos os fatores que altera sim qualquer que seja o produto.</p>
 </div>
@@ -90,22 +76,23 @@
 </div>
 
 <div class="paper">
-  <p>e a saudade diária que eu tenho do seu sorriso é absurda</p>
+  <p></p>
+e a saudade diária que eu tenho do seu sorriso é absurda</p>
 </div>
-
+  
 <div class="paper image">
   <p>você é a razão da minha loucura</p>
   <img src="https://iili.io/HSzXbmF.jpg" />
 </div>
-
+  
 <div class="paper red">
-  <p>meu corpo implora, meu coração grita, é por você</p>
+ <p>meu corpo implora, meu coração grita, é por você</p>
 </div>
 
 <div class="paper">
   <p class="p1"> se tudo o que eu quero e desejo com toda a minha alma</p>
 </div>
-
+  
 <div class="paper red">
   <p>Me diga, como em sã consciencia eu poderia olhar pra outra pessoa</p>
 </div>
