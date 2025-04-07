@@ -1,16 +1,4 @@
 let highestZ = 1;
-let musicaTocando = false;
-const musica = document.getElementById("musica");
-
-function tocarMusica() {
-  if (!musicaTocando) {
-    musica.play().then(() => {
-      musicaTocando = true;
-    }).catch((error) => {
-      console.error("Erro ao tocar música:", error);
-    });
-  }
-}
 
 class Paper {
   constructor() {
@@ -66,7 +54,6 @@ class Paper {
 
     paper.addEventListener('mousedown', (e) => {
       e.preventDefault(); // evita abrir o menu com botão direito
-      tocarMusica();
 
       this.holdingPaper = true;
       paper.style.zIndex = highestZ++;
