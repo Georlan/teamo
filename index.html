@@ -5,92 +5,7 @@
   <title>saro-rosy ❤️</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
-  <style>
-    body {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-size: 1000px;
-      background-image: url("https://www.psdgraphics.com/wp-content/uploads/2022/01/white-math-paper-texture.jpg");
-      background-position: center center;
-      font-family: 'Great Vibes', cursive;
-    }
-
-    .paper {
-      background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
-      background-size: 500px;
-      background-position: center center;
-      padding: 20px 100px;
-      transform: rotateZ(-5deg);
-      box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
-      position: absolute;
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.2em;
-    }
-
-    .paper.heart {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      padding: 0;
-      border-radius: 50%;
-    }
-
-    .paper.heart::after {
-      content: "";
-      background-image: url('https://cdn.pixabay.com/photo/2016/03/31/19/25/cartoon-1294994__340.png');
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-size: 150px;
-      background-position: center center;
-      background-repeat: no-repeat;
-      opacity: 0.6;
-    }
-
-    .paper:nth-child(even) {
-      transform: rotate(2deg);
-      background: #ffe4e1 !important;
-    }
-
-    .paper:nth-child(3n) {
-      transform: rotate(1deg);
-      background: #f8f8ff !important;
-    }
-
-    img {
-      max-height: 200px;
-      width: 100%;
-      user-select: none;
-    }
-
-    p {
-      font-family: 'Zeyada';
-      font-size: 50px;
-      color: rgb(0,0,100);
-      opacity: 0.75;
-      user-select: none;
-    }
-
-    /* Botão de música */
-    #playButton {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background: #ff90b3;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 2px 5px 10px rgba(0,0,0,0.3);
-      z-index: 999;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -166,24 +81,7 @@
 <!-- Áudio -->
 <audio id="musica" src="musica.mp3" preload="auto" loop></audio>
 
-<script>
-  const musica = document.getElementById('musica');
-  const botao = document.getElementById('playButton');
-
-  // Tenta tocar automaticamente ao carregar a página
-  window.addEventListener('load', () => {
-    musica.play().then(() => {
-      botao.style.display = 'none'; // Esconde o botão se tocou com sucesso
-    }).catch(() => {
-      console.log("Autoplay bloqueado. Clique no botão para tocar a música.");
-    });
-  });
-
-  function tocarMusica() {
-    musica.play();
-    botao.style.display = 'none';
-  }
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
