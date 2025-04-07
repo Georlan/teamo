@@ -27,11 +27,27 @@
       transform: rotate(1deg);
       background: #f8f8ff;
     }
+
+    #playButton {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 9999;
+    }
   </style>
 </head>
 <body>
 
-<!-- Developed by Saravanan -->
+<!-- Botão para tocar a música -->
+<button id="playButton">Tocar Música 🎶</button>
+
 <div class="paper heart"></div>
 
 <div class="paper">
@@ -96,6 +112,8 @@
 <div class="paper">
   <p>Arraste os papéis!</p>
 </div>
+
+<audio id="musica" src="musica.mp3" preload="auto"></audio>
 
 <script src="script.js"></script>
 
