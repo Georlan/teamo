@@ -16,7 +16,6 @@ class Paper {
 
   
   init(paper) {
-    folha.addEventListener('mousedown', iniciarArrasto);
     document.addEventListener('mousemove', (e) => {
       if(!this.rotating) {
         this.mouseX = e.clientX;
